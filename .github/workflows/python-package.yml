@@ -29,12 +29,6 @@ jobs:
     - name: Lint
       run: |
         nox -e lint
-    - name: Test with py3.6
+    - name: Test
       run: |
-        nox -e test-3.6
-    - name: Test with py3.7
-      run: |
-        nox -e test-3.7
-    - name: Test with py3.8
-      run: |
-        nox -e test-3.8
+        nox -p ${{ matrix.python-version }}
