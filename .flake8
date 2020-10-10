@@ -6,6 +6,8 @@
 # Once Flake8 3.0 is released and in a good state, we can use both and it will
 # work well \o/
 ignore = D203, W503, E203
+per-file-ignores =
+    test/*: D104
 exclude =
     .tox,
     .git,

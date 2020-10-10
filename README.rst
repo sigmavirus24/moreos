@@ -9,6 +9,15 @@ moreos
 
 Logo design by `Stargirl Flowers`_.
 
+Goals
+=====
+
+
+- Immutable Cookie objects
+- Flexible Cookie Jars
+- Human readable/understandable Policy Enums
+- Secure policy by default
+
 
 .. _Stargirl Flowers:
     https://github.com/theacodes
