@@ -44,8 +44,9 @@ class SameSitePolicy(enum.Enum):
         # the converter
         if policy is None:
             return policy
-        policy = typing.cast(str, policy)
-        return getattr(cls, policy.lower(), None)
+        return typing.cast(
+            typing.Optional[SSP], getattr(cls, policy.lower(), None)
+        )
 
 
 @enum.unique
@@ -79,7 +80,6 @@ class CookieType(enum.Enum):
     ) -> typing.Optional["CookieType"]:
         """Convert the cookie header name to its CookieType."""
         if cookie_header_value is not None:
-            cookie_header_value = typing.cast(str, cookie_header_value)
             lowered = cookie_header_value.lower()
             if lowered == "set-cookie":
                 return cls.server
@@ -181,7 +181,9 @@ class Cookie:
         """
         return self.domain is not None and not self.domain.endswith(".")
 
-    def expired(self: C, now: datetime.datetime = None) -> bool:
+    def expired(
+        self: C, now: typing.Optional[datetime.datetime] = None
+    ) -> bool:
         """Check if the cookie has expired or not.
 
         :param now:

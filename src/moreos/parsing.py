@@ -1,4 +1,4 @@
-"""Parsing utilities for Cookie strings."""
+"""Parsing utilities for moreos."""
 import re
 
 import attr
