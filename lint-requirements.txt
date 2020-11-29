@@ -6,5 +6,6 @@ pep8-naming
 flake8-colors
 pylint
 mypy
+mypy-zope
 bandit
 twine
